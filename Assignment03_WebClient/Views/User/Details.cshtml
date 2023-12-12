@@ -1,0 +1,128 @@
+﻿@model Assignment03_BussinessObject.Entities.AspNetUser
+
+@{
+    ViewData["Title"] = "AspNetUser Details";
+}
+
+<div class="container">
+    <h1 class="text-center">AspNetUser Details</h1>
+
+    @if (ViewBag.ErrMsg != null)
+    {
+        <div class="alert alert-danger">@ViewBag.ErrMsg</div>
+    }
+    <form asp-action="Edit" method="post" class="needs-validation" novalidate>
+        <input type="hidden" asp-for="Id" required readonly />
+        <input type="hidden" asp-for="PasswordHash" required readonly />
+        <div>
+            <h4>AspNetUser Information</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-2">
+                    <label>UserName</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="UserName" class="form-control" readonly required />
+                </div>
+                <div class="col-md-2">
+                    <label>NormalizedUserName</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="NormalizedUserName" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>Email</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="Email" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>NormalizedEmail</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="NormalizedEmail" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>EmailConfirmed</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="EmailConfirmed" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>PasswordHash</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="PasswordHash" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>SecurityStamp</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="SecurityStamp" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>ConcurrencyStamp</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="ConcurrencyStamp" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>PhoneNumber</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="PhoneNumber" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>PhoneNumberConfirmed</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="PhoneNumberConfirmed" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>TwoFactorEnabled</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="TwoFactorEnabled" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>LockoutEnd</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="LockoutEnd" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>LockoutEnabled</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="LockoutEnabled" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>AccessFailedCount</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="AccessFailedCount" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>FirstName</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="FirstName" class="form-control" required />
+                </div>
+                <div class="col-md-2">
+                    <label>LastName</label>
+                </div>
+                <div class="col-md-10">
+                    <input asp-for="LastName" class="form-control" required />
+                </div>
+                
+                
+            </div>
+        </div>
+        @if (ViewBag.Role != null && ViewBag.Role != "Admin")
+        {
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        }
+    </form>
+</div>

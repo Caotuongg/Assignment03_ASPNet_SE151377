@@ -1,0 +1,113 @@
+﻿﻿<div class="container-fluid">
+    <h2>User List</h2>
+
+    
+
+    
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>UserName</th>
+                <th>NormalizedUserName</th>
+                <th>Email</th>
+                <th>NormalizedEmail</th>
+                <th>EmailConfirmed</th>
+                <th>PasswordHash</th>
+                <th>SecurityStamp</th>
+                <th>ConcurrencyStamp</th>
+                <th>PhoneNumber</th>
+                <th>PhoneNumberConfirmed</th>
+                <th>TwoFactorEnabled</th>
+                <th>LockoutEnd</th>
+                <th>LockoutEnabled</th>
+                <th>AccessFailedCount</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        ShowAllUsers();
+    });
+
+    function ShowAllUsers() {
+        $("table tbody").html("");
+        $.ajax({
+            url: "https://localhost:7129/api/Users/GetAll", // Thay thế bằng URL của API lấy dữ liệu người dùng
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                console.log('data: ', data)
+                var users = data.data; // Đảm bảo rằng dữ liệu trả về từ API có định dạng phù hợp
+                $.each(users, function (index, value) {
+                    $("tbody").append($("<tr>"));
+                    appendElement = $("tbody tr").last();
+                    appendElement.append($("<td>").html(value["id"]));
+                    appendElement.append($("<td>").html(value["userName"]));
+                    appendElement.append($("<td>").html(value["normalizedUserName"]));
+                    appendElement.append($("<td>").html(value["email"]));
+                    appendElement.append($("<td>").html(value["normalizedEmail"]));
+                    appendElement.append($("<td>").html(value["emailConfirmed"] ? "1" : "0")); // Hiển thị Yes nếu true, ngược lại là No
+                    appendElement.append($("<td>").html(value["passwordHash"]));
+                    appendElement.append($("<td>").html(value["securityStamp"]));
+                    appendElement.append($("<td>").html(value["concurrencyStamp"]));
+                    appendElement.append($("<td>").html(value["phoneNumber"]));
+                    appendElement.append($("<td>").html(value["phoneNumberConfirmed"] ? "1" : "0")); // Hiển thị Yes nếu true, ngược lại là No
+                    appendElement.append($("<td>").html(value["twoFactorEnabled"] ? "1" : "0")); // Hiển thị Yes nếu true, ngược lại là No
+                    appendElement.append($("<td>").html(value["lockoutEnd"]));
+                    appendElement.append($("<td>").html(value["lockoutEnabled"] ? "1" : "0")); // Hiển thị Yes nếu true, ngược lại là No
+                    appendElement.append($("<td>").html(value["accessFailedCount"]));
+                    appendElement.append($("<td>").html(value["firstName"]));
+                    appendElement.append($("<td>").html(value["lastName"]));
+                    //appendElement.append($("<td>").html("<a class='details-button' href='/User/Details?id=" + value["id"] + "'>Details</a>"));
+                    appendElement.append($("<td>").html("<a class='delete-button' href='/User/Delete?id=" + value["id"] + "'>Delete</a>"));
+                });
+
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr);
+            }
+        });
+    }
+</script>
+
+<style>
+    .delete-button {
+        background-color: red; /* Background color for the button */
+        color: #fff; /* Text color for the button */
+        padding: 5px 10px; /* Adjust the padding to control the button's size */
+        border: none; /* Remove button border */
+        border-radius: 5px; /* Add rounded corners to the button */
+        text-decoration: none; /* Remove underline from the link */
+    }
+
+        .delete-button:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+</style>
+
+<style>
+    .details-button {
+        background-color: orange; /* Background color for the button */
+        color: #fff; /* Text color for the button */
+        padding: 5px 10px; /* Adjust the padding to control the button's size */
+        border: none; /* Remove button border */
+        border-radius: 5px; /* Add rounded corners to the button */
+        text-decoration: none; /* Remove underline from the link */
+    }
+
+        .details-button:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+</style>
+

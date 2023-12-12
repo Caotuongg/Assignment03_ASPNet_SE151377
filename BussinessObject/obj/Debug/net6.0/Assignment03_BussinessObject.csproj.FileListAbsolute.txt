@@ -1,0 +1,14 @@
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\bin\Debug\net6.0\Assignment03_BussinessObject.deps.json
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\bin\Debug\net6.0\Assignment03_BussinessObject.runtimeconfig.json
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\bin\Debug\net6.0\Assignment03_BussinessObject.dll
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\bin\Debug\net6.0\Assignment03_BussinessObject.pdb
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.AssemblyInfo.cs
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.dll
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\refint\Assignment03_BussinessObject.dll
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.pdb
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\Assignment03_BussinessObject.genruntimeconfig.cache
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\BussinessObject\obj\Debug\net6.0\ref\Assignment03_BussinessObject.dll

@@ -1,0 +1,75 @@
+﻿@model ReportVM
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        #orderDetails {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
+    <div id="orderDetails">
+        <h2>Order Details</h2>
+        <div id="orderContent"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        var token = '@Model.token';
+
+        $(document).ready(function () {
+            // Make Ajax call
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:7129/api/Orders/GetAllOrderByAdmin/get-all-order-by-admin",
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                },
+                dataType: "json",
+                success: function (data) {
+                    // Handle the returned data
+                    displayOrderData(data.data);
+                },
+                error: function () {
+                    console.error("Error fetching order data.");
+                }
+            });
+        });
+
+        // Display the order data on the page
+    function displayOrderData(data) {
+        var orderContent = $("#orderContent");
+
+        // Clear the existing content
+        orderContent.empty();
+
+        // Loop through all orders in the data array
+        for (var i = 0; i < data.length; i++) {
+            orderContent.append("<div class='order-item'>");
+            orderContent.append("<p><strong>Order ID:</strong> " + data[i].orderId + "</p>");
+            orderContent.append("<p><strong>Order Date:</strong> " + data[i].orderDate + "</p>");
+            orderContent.append("<p><strong>Total Products:</strong> " + data[i].totalProduct + "</p>");
+            orderContent.append("<p><strong>Total Price:</strong> $" + numberWithCommas(data[i].totalPrice) + "</p>");
+            orderContent.append("</div>");
+        }
+    }
+
+
+        // Format number with commas for better readability
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    </script>
+

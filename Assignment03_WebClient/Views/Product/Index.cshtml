@@ -1,0 +1,141 @@
+﻿﻿<div class="container-fluid">
+    <h2>Product List</h2>
+        
+        <p class="text-right">
+        <a href="/Product/Create" class="btn btn-primary">Create Product</a>
+        </p>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchInput" placeholder="Search for products">
+            </div>
+        </div>
+        <div class="col-md-2">
+            
+                <button class="btn btn-primary" id="searchButton">Search</button>
+            
+            
+        </div>
+    </div>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ProductId</th>
+                <th>Category</th>
+                <th>Product Name</th>
+                <th>Weight</th>
+                <th>UnitPrice</th>
+                <th>UnitsInStock</th>
+                <th>Update</th>
+                <th>Details</th>
+                <th>Delete</th>
+                @*<th>Add to Cart</th>*@
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        ShowAllProducts();
+
+        $("#searchButton").click(function () {
+            var searchInput = $("#searchInput").val();
+            ShowAllProducts(1, 5, searchInput);
+        });
+    });
+
+    
+
+    function ShowAllProducts(page = 1, itemPerPage = 20, search = '') {
+        $("table tbody").html("");
+        $.ajax({
+            url: "https://localhost:7129/api/Products/GetAllProduct",
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: {
+                search: search, pageIndex: page, itemPerPage: itemPerPage
+            },
+            success: function (data) {
+                console.log('data: ', data)
+                var products = data.data;
+                $.each(products, function (index, value) {
+                    $("tbody").append($("<tr>"));
+                    appendElement = $("tbody tr").last();
+                    appendElement.append($("<td>").html(value["productId"]));
+                    appendElement.append($("<td>").html(value["category"]["categoryName"]));
+                    appendElement.append($("<td>").html(value["productName"]));
+                    appendElement.append($("<td>").html(value["weight"]));
+                    appendElement.append($("<td>").html(value["unitPrice"]));
+                    appendElement.append($("<td>").html(value["unitsInStock"]));
+                    appendElement.append($("<td>").html("<a class='edit-button' href='/Product/Edit?id=" + value["productId"] + "'>Edit</a>"));
+                    appendElement.append($("<td>").html("<a class='details-button' href=\"/Product/Details?productId=" + value["productId"] + "\">Detail</a>"));
+                    appendElement.append($("<td>").html("<a class='delete-button' href=\"/Product/Delete?id=" + value["productId"] + "\">Delete</a>"));
+                    
+                    //if ("@ViewBag.Role" === "Customer") {
+                    //    appendElement.append($("<td>").html("<a href=\"/Cart/AddToCart?productId=" + value["productId"] + "\">Add to Cart</a>"));
+                    //}
+                       
+                   
+    });
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr);
+            }
+        });
+    }
+</script>
+
+<style>
+    .edit-button {
+        background-color: deepskyblue; /* Background color for the button */
+        color: #fff; /* Text color for the button */
+        padding: 5px 10px; /* Adjust the padding to control the button's size */
+        border: none; /* Remove button border */
+        border-radius: 5px; /* Add rounded corners to the button */
+        text-decoration: none; /* Remove underline from the link */
+    }
+
+        .edit-button:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+</style>
+
+<style>
+    .delete-button {
+        background-color: red; /* Background color for the button */
+        color: #fff; /* Text color for the button */
+        padding: 5px 10px; /* Adjust the padding to control the button's size */
+        border: none; /* Remove button border */
+        border-radius: 5px; /* Add rounded corners to the button */
+        text-decoration: none; /* Remove underline from the link */
+    }
+
+        .delete-button:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+</style>
+
+<style>
+    .details-button {
+        background-color: orange; /* Background color for the button */
+        color: #fff; /* Text color for the button */
+        padding: 5px 10px; /* Adjust the padding to control the button's size */
+        border: none; /* Remove button border */
+        border-radius: 5px; /* Add rounded corners to the button */
+        text-decoration: none; /* Remove underline from the link */
+    }
+
+        .details-button:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+</style>
+
+

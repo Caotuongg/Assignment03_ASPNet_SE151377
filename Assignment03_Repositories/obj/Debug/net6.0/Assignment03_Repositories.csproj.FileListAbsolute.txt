@@ -1,0 +1,15 @@
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\bin\Debug\net6.0\Assignment03_Repositories.deps.json
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\bin\Debug\net6.0\Assignment03_Repositories.dll
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\bin\Debug\net6.0\Assignment03_Repositories.pdb
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\bin\Debug\net6.0\Assignment03_BussinessObject.dll
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\bin\Debug\net6.0\Assignment03_BussinessObject.pdb
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.AssemblyInfo.cs
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.csproj.CopyComplete
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.dll
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\refint\Assignment03_Repositories.dll
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\Assignment03_Repositories.pdb
+C:\Users\HP\Desktop\Kỳ 8\PRN231\Assignment03_ASPNet_SE151377\Assignment03_Repositories\obj\Debug\net6.0\ref\Assignment03_Repositories.dll
